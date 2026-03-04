@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: go-web-app-deployment
+  namespace: go-web-app
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: go-web-app-deployment
+  template:
+    metadata:
+      labels:
+        app: go-web-app-deployment
+    spec:
+      containers:
+        - name: go-web-app-deployment
+          image: likhith045/go-web-app:v3
+          imagePullPolicy: Always
+          ports:
+            - containerPort: 9000
+          
