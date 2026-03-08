@@ -68,4 +68,9 @@ To improve deployment efficiency and reduce container image size, the Dockerfile
 The application is first compiled in a builder stage using the Go runtime image, and only the compiled binary is copied into a minimal Alpine runtime image. This removes unnecessary build dependencies from the final image.
 
 
+Implementation
+To run the server, execute the following command:
+go run main.go
+
+It will start on the port 9000,  http://localhost:9000/courses
 
